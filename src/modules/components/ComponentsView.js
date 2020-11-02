@@ -4,7 +4,11 @@ import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 import { colors, fonts } from '../../styles';
 
-import { Button, RadioGroup, Dropdown } from '../../components';
+import { 
+  Button, 
+  RadioGroup, 
+  // Dropdown 
+} from '../../components';
 
 export default function ComponentsScreen(props) {
   return (
@@ -335,11 +339,11 @@ export default function ComponentsScreen(props) {
       <View style={styles.componentsSection}>
         <Text style={styles.componentSectionHeader}>Dropdown</Text>
 
-        <Dropdown
+        {/* <Dropdown
           style={{ width: 200, alignSelf: 'center' }}
           onSelect={() => {}}
           items={['option 1', 'option 2']}
-        />
+        /> */}
       </View>
     </ScrollView>
   );

@@ -5,6 +5,8 @@ import TabNavigator from './MainTabNavigator';
 import GalleryScreen from '../gallery/GalleryViewContainer';
 import AvailableInFullVersion from '../../modules/availableInFullVersion/AvailableInFullVersionViewContainer';
 
+import PostScreen from '../post/PostViewContainer'
+import GridsScreen from '../grids/GridsViewContainer';
 // import ProfileScreen from '../profile/ProfileViewContainer';
 // import ArticleScreen from '../article/ArticleViewContainer';
 // import ChatScreen from '../chat/ChatViewContainer';
@@ -37,7 +39,7 @@ const headerBackground = require('../../../assets/images/topBarBg.png');
 
 const StackNavigationData = [
   {
-    name: 'React Native Starter',
+    name: 'Blog Reader',
     component: TabNavigator,
     headerLeft: null,
     headerBackground: { source: headerBackground },
@@ -82,7 +84,8 @@ const StackNavigationData = [
   },
   {
     name: 'Article',
-    component: AvailableInFullVersion,
+    component: PostScreen,
+    // slug: "",
     headerLeft: headerLeftComponent,
     headerBackground: { source: headerBackground },
     headerTitleStyle: {

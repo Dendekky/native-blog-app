@@ -1,45 +1,39 @@
+/* eslint-disable linebreak-style */
 import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   ScrollView,
   View,
-  TouchableOpacity,
+//   TouchableOpacity,
   Image,
   // ImageBackground,
-  FlatList,
+//   FlatList,
   Dimensions,
 } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 import { fonts, colors } from '../../styles';
 import { Text } from '../../components/StyledText';
 
-export default function HomeScreen(props) {
+export default function PostScreen(props) {
   const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
+  const { route: { params: { slug } } } = props;
 
   useEffect(() => {
-    fetch('https://marblesofhameedah.herokuapp.com/api/post')
+    fetch(`https://marblesofhameedah.herokuapp.com/api/post/${slug}`)
       .then((response) => response.json())
-      .then((fetchedData) => setData(fetchedData.posts.reverse()))
+      .then((fetchedData) => setData(fetchedData))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);
 
-  const onPress = slug => {
-    props.navigation.navigate('Article', {
-      slug,
-    });
-  };
-  // const rnsUrl = 'https://reactnativestarter.com';
-  // const handleClick = () => {
-  //   Linking.canOpenURL(rnsUrl).then(supported => {
-  //     if (supported) {
-  //       Linking.openURL(rnsUrl);
-  //     } else {
-  //       console.log(`Don't know how to open URI: ${rnsUrl}`);
-  //     }
-  //   });
-  // };
+//   const onPress = slug => {
+//     props.navigation.navigate('Article', {
+//       slug,
+//     });
+//   };
+
   if(isLoading) {
     return <Text>Loading.....</Text>
   }
@@ -52,16 +46,27 @@ export default function HomeScreen(props) {
       > */}
       <View style={styles.section}>
         <Text size={20} style={{ color: 'red' }}>
-          Blog Posts 
+          Unique Post
         </Text>
       </View>
       <View style={{ flex: 1, padding: 8 }}>
-        <FlatList
+        <Text size={20} style={{ color: 'red' }}>
+          {data.title}
+        </Text>
+        <Text size={20} style={{ color: 'red' }}>
+          {new Date(data.updatedAt).toDateString()}
+        </Text>
+        <Image style={{ height: 250, width: 300 }} source={{ uri: data.postImage }} />
+        <WebView
+          originWhitelist={['*']}
+          source={{ html: data.body }}
+        />
+        {/* <FlatList
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <>
-              {/* <TouchableOpacity 
+            <> */}
+        {/* <TouchableOpacity 
                   key={item.id} 
                   // onPress={() => this._openArticle(item)}
                 >
@@ -87,7 +92,7 @@ export default function HomeScreen(props) {
                   </View>
                 </TouchableOpacity> */}
 
-              <TouchableOpacity
+        {/* <TouchableOpacity
                 key={item.id}
                 style={styles.itemThreeContainer}
                 onPress={() => onPress(item.slug)}
@@ -126,7 +131,7 @@ export default function HomeScreen(props) {
               </TouchableOpacity>
             </>
           )}
-        />
+        /> */}
       </View>
       {/* </ImageBackground> */}
     </ScrollView>

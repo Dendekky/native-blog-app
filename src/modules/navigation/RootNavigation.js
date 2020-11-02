@@ -40,6 +40,7 @@ export default function NavigatorView(props) {
           name={item.name} 
           component={item.component} 
           options={{
+            slug: item.slug || "",
             headerLeft: item.headerLeft || headerLeftComponentMenu,
             headerBackground: () => (
               <Image style={styles.headerImage} source={item.headerBackground.source} />

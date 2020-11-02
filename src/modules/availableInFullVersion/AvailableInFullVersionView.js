@@ -23,6 +23,8 @@ export default function AvailableInFullVersionScreen(props) {
     });
   };
 
+  alert("Hello")
+
   return (
     <ImageBackground
       source={require('../../../assets/images/background.png')}

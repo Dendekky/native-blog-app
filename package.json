@@ -1,5 +1,5 @@
 {
-  "name": "react-native-starter",
+  "name": "blog-reader",
   "version": "2.1.0",
   "private": false,
   "resolutions": {
@@ -21,10 +21,12 @@
   "dependencies": {
     "@react-native-community/cli": "^4.10.1",
     "@react-native-community/masked-view": "^0.1.9",
+    "@react-native-community/toolbar-android": "0.1.0-rc.2",
     "@react-navigation/bottom-tabs": "^5.2.6",
     "@react-navigation/drawer": "^5.4.1",
     "@react-navigation/native": "^5.1.5",
     "@react-navigation/stack": "^5.2.10",
+    "deprecated-react-native-listview": "0.0.6",
     "global": "^4.4.0",
     "i18n-js": "^3.2.1",
     "jetifier": "^1.6.5",
@@ -47,6 +49,7 @@
     "react-native-screens": "^2.5.0",
     "react-native-ui-lib": "^3.39.0",
     "react-native-vector-icons": "^6.6.0",
+    "react-native-webview": "^10.10.0",
     "react-redux": "^6.0.1",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",

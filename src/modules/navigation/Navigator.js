@@ -10,33 +10,33 @@ import NavigatorView from './RootNavigation';
 import AvailableInFullVersion from '../../modules/availableInFullVersion/AvailableInFullVersionViewContainer';
 
 const iconHome = require('../../../assets/images/drawer/home.png');
-const iconCalendar = require('../../../assets/images/drawer/calendar.png');
-const iconGrids = require('../../../assets/images/drawer/grids.png');
-const iconPages = require('../../../assets/images/drawer/pages.png');
-const iconComponents = require('../../../assets/images/drawer/components.png');
-const iconSettings = require('../../../assets/images/drawer/settings.png');
+// const iconCalendar = require('../../../assets/images/drawer/calendar.png');
+// const iconGrids = require('../../../assets/images/drawer/grids.png');
+// const iconPages = require('../../../assets/images/drawer/pages.png');
+// const iconComponents = require('../../../assets/images/drawer/components.png');
+// const iconSettings = require('../../../assets/images/drawer/settings.png');
 
 const drawerData = [
   {
     name: 'Home',
     icon: iconHome,
   },
-  {
-    name: 'Calendar',
-    icon: iconCalendar,
-  },
-  {
-    name: 'Grids',
-    icon: iconGrids,
-  },
-  {
-    name: 'Pages',
-    icon: iconPages,
-  },
-  {
-    name: 'Components',
-    icon: iconComponents,
-  },
+  // {
+  //   name: 'Calendar',
+  //   icon: iconCalendar,
+  // },
+  // {
+  //   name: 'Grids',
+  //   icon: iconGrids,
+  // },
+  // {
+  //   name: 'Pages',
+  //   icon: iconPages,
+  // },
+  // {
+  //   name: 'Components',
+  //   icon: iconComponents,
+  // },
 ];
 
 const Drawer = createDrawerNavigator();
@@ -44,7 +44,7 @@ const Drawer = createDrawerNavigator();
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props} style={{padding: 0}}>
-      <View style={styles.avatarContainer}>
+      {/* <View style={styles.avatarContainer}>
         <Image
           style={styles.avatar}
           source={require('../../../assets/images/drawer/user.png')}
@@ -53,7 +53,7 @@ function CustomDrawerContent(props) {
           <Text style={styles.userName}>John Doe</Text>
           <Text style={{ color: '#4BC1FD' }}>Johndoe@gmail.com</Text>
         </View>
-      </View>
+      </View> */}
       <View style={styles.divider} />
       {drawerData.map((item, idx) => (
         <DrawerItem
@@ -72,7 +72,7 @@ function CustomDrawerContent(props) {
         />        
       ))}
       <View style={styles.divider} />
-      <DrawerItem
+      {/* <DrawerItem
         label={() => (
           <View style={styles.menuLabelFlex}>
             <Image
@@ -83,7 +83,7 @@ function CustomDrawerContent(props) {
           </View>
         )}
         onPress={() => props.navigation.navigate('Calendar')}
-      />
+      /> */}
     </DrawerContentScrollView>
   );
 }
